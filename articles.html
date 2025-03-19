@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Liste des articles disponibles sur notre blog. Découvrez des sujets intéressants à lire.">
-  <meta name="keywords" content="articles, blog, lecture, sujets divers">
-  <meta name="author" content="Votre Nom">
-  <title>Articles - Blog d'Articles</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/script.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P2DKDZRQ47"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-P2DKDZRQ47');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorez une variété d'articles intéressants sur notre blog.">
+    <meta name="keywords" content="articles, blog, contenu, lecture, sujets divers">
+    <meta name="author" content="Votre Nom">
+    <title>Articles - Blog d'Articles</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
 </head>
+
 <body>
   <header>
     <h1>Blog d'Articles</h1>
@@ -24,13 +35,28 @@
   </header>
 
   <main>
-    <section class="article-list">
-      <h2>Tous les Articles</h2>
-      <ul>
-        <li><a href="article1.html">Titre de l'Article 1</a></li>
-        <li><a href="article2.html">Titre de l'Article 2</a></li>
-        <li><a href="article3.html">Titre de l'Article 3</a></li>
-      </ul>
+    <h2>Liste des articles</h2>
+    <section class="article-preview">
+      <article>
+        <h2><a href="article1.html">Titre de l'Article 1</a></h2>
+        <img src="assets/article1.jpg" alt="Image de l'article 1">
+        <p>Résumé de l'article 1...</p>
+        <a href="article1.html">Lire plus</a>
+      </article>
+
+      <article>
+        <h2><a href="article2.html">Titre de l'Article 2</a></h2>
+        <img src="assets/article2.jpg" alt="Image de l'article 2">
+        <p>Résumé de l'article 2...</p>
+        <a href="article2.html">Lire plus</a>
+      </article>
+
+      <article>
+        <h2><a href="article3.html">Titre de l'Article 3</a></h2>
+        <img src="assets/article3.jpg" alt="Image de l'article 3">
+        <p>Résumé de l'article 3...</p>
+        <a href="article3.html">Lire plus</a>
+      </article>
     </section>
   </main>
 
