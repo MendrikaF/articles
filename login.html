@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style2.css">
-    <title>Login - Backoffice</title>
-    <script defer src="js/script.js"></script>
-
-
+    <title>Connexion</title>
+    <script defer src="login.js"></script>
 </head>
 <body>
-    <div class="login-container">
-        <h2>Connexion au Backoffice</h2>
-        <form id="loginForm">
-            <input type="text" id="username" class="input-field" placeholder="Identifiant" required><br>
-            <input type="password" id="password" class="input-field" placeholder="Mot de passe" required><br>
-            <button type="submit" class="login-btn">Se connecter</button>
-        </form>
-    </div>
+    <h2>Connexion</h2>
+    <form id="loginForm">
+        <label for="username">Identifiant :</label>
+        <input type="text" id="username" required>
+        <br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" required>
+        <br>
+        <button type="submit">Se connecter</button>
+    </form>
+    <p id="errorMessage" style="color: red;"></p>
 </body>
 </html>
