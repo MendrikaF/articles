@@ -4,8 +4,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
-    const validUsername = "admin"; // Identifiant fixe
-    const validPassword = "12345";  // Mot de passe fixe
+    const validUsername = "admin@gmail.com"; // Identifiant fixe
+    const validPassword = "123456789";  // Mot de passe fixe
 
     if (username === validUsername && password === validPassword) {
         sessionStorage.setItem("isLoggedIn", "true");
