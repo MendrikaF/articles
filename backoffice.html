@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backoffice - Google Analytics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .analytics-results {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue dans le Backoffice</h1>
+        <button onclick="fetchAnalyticsData()">Récupérer les données Analytics</button>
+
+        <div id="analytics-results" class="analytics-results">
+            <p>Les données de Google Analytics seront affichées ici.</p>
+        </div>
+    </div>
+
+    <script>
+       function fetchAnalyticsData() {
+    const API_KEY = 'AIzaSyAUUUcIG1TRzCP3MjKUNvoSiFGK4KkStbo'; // Remplace par ta clé API
+    const VIEW_ID = 'G-P2DKDZRQ47'; // Remplace par ton ID de vue
+
+    fetch(`https://www.googleapis.com/analytics/v3/data/ga?ids=ga:${VIEW_ID}&start-date=30daysAgo&end-date=today&metrics=ga:sessions,ga:pageviews&dimensions=ga:date&key=${API_KEY}`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => displayAnalyticsData(data))
+    .catch(error => console.error('Erreur API:', error));
+}
+
+function displayAnalyticsData(data) {
+    const resultsDiv = document.getElementById('analytics-results');
+    resultsDiv.innerHTML = '<h3>Statistiques des 30 derniers jours</h3>';
+
+    if (data.rows) {
+        data.rows.forEach(row => {
+            const date = row[0];
+            const sessions = row[1];
+            const pageviews = row[2];
+
+            resultsDiv.innerHTML += `
+                <p>Date: ${date}, Sessions: ${sessions}, Pageviews: ${pageviews}</p>
+            `;
+        });
+    } else {
+        resultsDiv.innerHTML += '<p>Aucune donnée disponible.</p>';
+    }
+}
+    </script>
+</body>
+</html>
